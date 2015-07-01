@@ -1,8 +1,8 @@
 module.exports = function (opts) {
   var op = getOp(opts.op)
   var type = getType(opts.dtype)
-  var endian = getEndian(opts.endian)
-  if (op && type && endian) {
+  var endian = getEndian(opts.endian, opts.dtype)
+  if (op != null && type != null && endian != null) {
     return op + type + endian
   }
 }
@@ -35,7 +35,10 @@ function getType (dtype) {
   }
 }
 
-function getEndian (endian) {
+function getEndian (endian, dtype) {
+  if (dtype === 'int8' || dtype === 'uint8') {
+    return ''
+  }
   switch (endian) {
     case 'little':
       return 'LE'

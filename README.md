@@ -20,32 +20,32 @@ npm i --save btop
 
 | `Buffer` operation name | op | dtype | endian |
 |-------------------------|----|-------|--------|
-| readInt8LE | read | int8 | little |
-| readUInt8LE | read | uint8 | little |
+| readInt8 | read | int8 | little |
+| readUInt8 | read | uint8 | little |
 | readInt16LE | read | int16 | little |
 | readUInt16LE | read | uint16 | little |
 | readInt32LE | read | int32 | little |
 | readUInt32LE | read | uint32 | little |
 | readFloatLE | read | float32 | little |
 | readDoubleLE | read | float64 | little |
-| readInt8BE | read | int8 | big |
-| readUInt8BE | read | uint8 | big |
+| readInt8 | read | int8 | big |
+| readUInt8 | read | uint8 | big |
 | readInt16BE | read | int16 | big |
 | readUInt16BE | read | uint16 | big |
 | readInt32BE | read | int32 | big |
 | readUInt32BE | read | uint32 | big |
 | readFloatBE | read | float32 | big |
 | readDoubleBE | read | float64 | big |
-| writeInt8LE | write | int8 | little |
-| writeUInt8LE | write | uint8 | little |
+| writeInt8 | write | int8 | little |
+| writeUInt8 | write | uint8 | little |
 | writeInt16LE | write | int16 | little |
 | writeUInt16LE | write | uint16 | little |
 | writeInt32LE | write | int32 | little |
 | writeUInt32LE | write | uint32 | little |
 | writeFloatLE | write | float32 | little |
 | writeDoubleLE | write | float64 | little |
-| writeInt8BE | write | int8 | big |
-| writeUInt8BE | write | uint8 | big |
+| writeInt8 | write | int8 | big |
+| writeUInt8 | write | uint8 | big |
 | writeInt16BE | write | int16 | big |
 | writeUInt16BE | write | uint16 | big |
 | writeInt32BE | write | int32 | big |

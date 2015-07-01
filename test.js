@@ -3,13 +3,15 @@ var test = require('tape')
 var fixtures = [
   // undefineds
   [{}, undefined],
+  [{ op: 'write', dtype: 'int16' }, undefined],
   [{ dtype: 'int8', endian: 'little' }, undefined],
-  [{ op: 'read', dtype: 'int8' }, undefined],
   [{ op: 'read', endian: 'little' }, undefined],
 
   // read little endian
-  [{ op: 'read', dtype: 'int8', endian: 'little' }, 'readInt8LE'],
-  [{ op: 'read', dtype: 'uint8', endian: 'little' }, 'readUInt8LE'],
+  [{ op: 'read', dtype: 'int8' }, 'readInt8'],
+  [{ op: 'read', dtype: 'int8', endian: 'little' }, 'readInt8'],
+  [{ op: 'read', dtype: 'uint8' }, 'readUInt8'],
+  [{ op: 'read', dtype: 'uint8', endian: 'little' }, 'readUInt8'],
   [{ op: 'read', dtype: 'int16', endian: 'little' }, 'readInt16LE'],
   [{ op: 'read', dtype: 'uint16', endian: 'little' }, 'readUInt16LE'],
   [{ op: 'read', dtype: 'int32', endian: 'little' }, 'readInt32LE'],
@@ -18,8 +20,8 @@ var fixtures = [
   [{ op: 'read', dtype: 'float64', endian: 'little' }, 'readDoubleLE'],
 
   // read big endian
-  [{ op: 'read', dtype: 'int8', endian: 'big' }, 'readInt8BE'],
-  [{ op: 'read', dtype: 'uint8', endian: 'big' }, 'readUInt8BE'],
+  [{ op: 'read', dtype: 'int8', endian: 'big' }, 'readInt8'],
+  [{ op: 'read', dtype: 'uint8', endian: 'big' }, 'readUInt8'],
   [{ op: 'read', dtype: 'int16', endian: 'big' }, 'readInt16BE'],
   [{ op: 'read', dtype: 'uint16', endian: 'big' }, 'readUInt16BE'],
   [{ op: 'read', dtype: 'int32', endian: 'big' }, 'readInt32BE'],
@@ -28,8 +30,8 @@ var fixtures = [
   [{ op: 'read', dtype: 'float64', endian: 'big' }, 'readDoubleBE'],
 
   // write little endian
-  [{ op: 'write', dtype: 'int8', endian: 'little' }, 'writeInt8LE'],
-  [{ op: 'write', dtype: 'uint8', endian: 'little' }, 'writeUInt8LE'],
+  [{ op: 'write', dtype: 'int8', endian: 'little' }, 'writeInt8'],
+  [{ op: 'write', dtype: 'uint8', endian: 'little' }, 'writeUInt8'],
   [{ op: 'write', dtype: 'int16', endian: 'little' }, 'writeInt16LE'],
   [{ op: 'write', dtype: 'uint16', endian: 'little' }, 'writeUInt16LE'],
   [{ op: 'write', dtype: 'int32', endian: 'little' }, 'writeInt32LE'],
@@ -38,8 +40,8 @@ var fixtures = [
   [{ op: 'write', dtype: 'float64', endian: 'little' }, 'writeDoubleLE'],
 
   // write big endian
-  [{ op: 'write', dtype: 'int8', endian: 'big' }, 'writeInt8BE'],
-  [{ op: 'write', dtype: 'uint8', endian: 'big' }, 'writeUInt8BE'],
+  [{ op: 'write', dtype: 'int8', endian: 'big' }, 'writeInt8'],
+  [{ op: 'write', dtype: 'uint8', endian: 'big' }, 'writeUInt8'],
   [{ op: 'write', dtype: 'int16', endian: 'big' }, 'writeInt16BE'],
   [{ op: 'write', dtype: 'uint16', endian: 'big' }, 'writeUInt16BE'],
   [{ op: 'write', dtype: 'int32', endian: 'big' }, 'writeInt32BE'],
